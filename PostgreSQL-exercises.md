@@ -3,18 +3,51 @@ This page goes through the PostgreSQL exercies avaiable on https://pgexercises.c
 
 You may download PostgreSQL database from [here](https://www.postgresql.org/download/)
 
-1. [Create Tables](#create-tables)
-2. [Populate Tables](#populate-tables)
-3. [Simple SQL Queries](#simple-sql-queries)
-4. [Joins and subquries](#joins-and-subqueries)
-5. [Modifying Data](#modifying-data)
-6. [Aggregates](#aggregates)
-7. [Date](#date)
-8. [String](#string)
-9. [Recursive](#recursive)
+1. [Create Database & Schema](#create-database-&-schema)
+2. [Create Tables](#create-tables)
+3. [Populate Tables](#populate-tables)
+4. [Simple SQL Queries](#simple-sql-queries)
+5. [Joins and subquries](#joins-and-subqueries)
+6. [Modifying Data](#modifying-data)
+7. [Aggregates](#aggregates)
+8. [Date](#date)
+9. [String](#string)
+10. [Recursive](#recursive)
 
+## Create Database & Schema
+```sql
+--
+-- PostgreSQL database dump
+--
+CREATE DATABASE exercises;
+\c exercises
+CREATE SCHEMA cd;
+
+
+
+-- Dumped from database version 9.2.0
+-- Dumped by pg_dump version 9.2.0
+-- Started on 2013-05-19 16:05:10 BST
+
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 7 (class 2615 OID 32769)
+-- Name: cd; Type: SCHEMA; Schema: -; Owner: -
+--
+
+SET search_path = cd, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+```
 
 ## Create Tables
+### Member Table DDL
 ``` sql
  CREATE TABLE cd.members
     (
@@ -32,10 +65,41 @@ You may download PostgreSQL database from [here](https://www.postgresql.org/down
     );
 ```
 
-## Populate Tables
+### Facilities Table DDL
 ```sql
-INSERT statements
+CREATE TABLE cd.facilities
+    (
+       facid integer NOT NULL, 
+       name character varying(100) NOT NULL, 
+       membercost numeric NOT NULL, 
+       guestcost numeric NOT NULL, 
+       initialoutlay numeric NOT NULL, 
+       monthlymaintenance numeric NOT NULL, 
+       CONSTRAINT facilities_pk PRIMARY KEY (facid)
+    );
 ```
+
+### Bookings Table DDL
+```sql
+CREATE TABLE cd.bookings
+    (
+       bookid integer NOT NULL, 
+       facid integer NOT NULL, 
+       memid integer NOT NULL, 
+       starttime timestamp NOT NULL,
+       slots integer NOT NULL,
+       CONSTRAINT bookings_pk PRIMARY KEY (bookid),
+       CONSTRAINT fk_bookings_facid FOREIGN KEY (facid) REFERENCES cd.facilities(facid),
+       CONSTRAINT fk_bookings_memid FOREIGN KEY (memid) REFERENCES cd.members(memid)
+    );
+```
+
+
+
+## Populate Tables
+1. Copy insert statements for Members table from [here](insert-into-members.sql)
+2. Copy insert statements for facilities table from [here](insert-into-facilities.sql)
+3. Copy insert statements for Bookings table from [here](insert-into-bookings.sql) 
 
 ## Simple SQL Queries
 ### Question
