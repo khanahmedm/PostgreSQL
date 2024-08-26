@@ -3,15 +3,15 @@ This page goes through the PostgreSQL exercies avaiable on https://pgexercises.c
 
 You may download PostgreSQL database from [here](https://www.postgresql.org/download/)
 
-1. [Create Tables] (#create-tables)
-2. [Populate Tables] (#populate-tables)
-3. [Simple SQL Queries] (#simple-sql-queries)
-4. [Joins and subquries] (#joins-and-subqueries)
-5. [Modifying Data] (#modifying-data)
-6. [Aggregates] (#aggregates)
-7. [Date] (#date)
-8. [String] (#string)
-9. [Recursive] (#recursive)
+1. [Create Tables](#create-tables)
+2. [Populate Tables](#populate-tables)
+3. [Simple SQL Queries](#simple-sql-queries)
+4. [Joins and subquries](#joins-and-subqueries)
+5. [Modifying Data](#modifying-data)
+6. [Aggregates](#aggregates)
+7. [Date](#date)
+8. [String](#string)
+9. [Recursive](#recursive)
 
 
 ## Create Tables
@@ -57,5 +57,8 @@ select * from cd.facilities;
 ```sql
 ```
 ## String
-
+```sql
+```
 ## Recursive
+```sql
+```
