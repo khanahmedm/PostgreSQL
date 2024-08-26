@@ -3,7 +3,7 @@ This page goes through the PostgreSQL exercies avaiable on https://pgexercises.c
 
 You may download PostgreSQL database from [here](https://www.postgresql.org/download/)
 
-1. [Create Database & Schema](#create-database-&-schema)
+1. [Create Database & Schema](#create-database-and-schema)
 2. [Create Tables](#create-tables)
 3. [Populate Tables](#populate-tables)
 4. [Simple SQL Queries](#simple-sql-queries)
@@ -14,7 +14,7 @@ You may download PostgreSQL database from [here](https://www.postgresql.org/down
 9. [String](#string)
 10. [Recursive](#recursive)
 
-## Create Database & Schema
+## Create Database and Schema
 ```sql
 --
 -- PostgreSQL database dump
