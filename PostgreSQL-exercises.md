@@ -45,6 +45,7 @@ SET default_tablespace = '';
 
 SET default_with_oids = false;
 ```
+[go to the top](#postgresql)
 
 ## Create Tables
 ### Member Table DDL
@@ -94,12 +95,14 @@ CREATE TABLE cd.bookings
     );
 ```
 
-
+[go to the top](#postgresql)
 
 ## Populate Tables
 1. Copy insert statements for Members table from [here](insert-into-members.sql)
 2. Copy insert statements for facilities table from [here](insert-into-facilities.sql)
 3. Copy insert statements for Bookings table from [here](insert-into-bookings.sql) 
+
+[go to the top](#postgresql)
 
 ## Simple SQL Queries
 ### Question
