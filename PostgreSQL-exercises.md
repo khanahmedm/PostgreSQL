@@ -130,7 +130,34 @@ where
 	(membercost < monthlymaintenance/50.0);     
 ```
    
-5. 
+5. How can you produce a list of all facilities with the word 'Tennis' in their name?
+```sql
+select *
+	from cd.facilities 
+	where 
+		name like '%Tennis%';
+```
+
+6. How can you retrieve the details of facilities with ID 1 and 5? Try to do it without using the OR operator.
+```sql
+select *
+	from cd.facilities 
+	where 
+		facid in (1,5);
+```
+
+7. How can you produce a list of facilities, with each labelled as 'cheap' or 'expensive' depending on if their monthly maintenance cost is more than $100? Return the name and monthly maintenance of the facilities in question.
+```sql
+select name, 
+	case when (monthlymaintenance > 100) then
+		'expensive'
+	else
+		'cheap'
+	end as cost
+	from cd.facilities;  
+```
+
+8. 
 ## Joins and subqueries
 ```sql
 ```
