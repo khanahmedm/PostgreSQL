@@ -1,5 +1,5 @@
 # PostgreSQL
-This page goes through the PostgreSQL exercies avaiable on https://pgexercises.com/
+This page goes through the PostgreSQL exercises avaiable on https://pgexercises.com/
 
 You may download PostgreSQL database from [here](https://www.postgresql.org/download/)
 
