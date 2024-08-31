@@ -181,7 +181,33 @@ order by surname
 limit 10;  
 ```
 
-10. 
+10. #### Combining results from multiple queries
+You, for some reason, want a combined list of all surnames and all facility names. Yes, this is a contrived example :-). Produce that list!
+```sql
+select surname 
+	from cd.members
+union
+select name
+	from cd.facilities;   
+```
+11. #### Simple aggregation
+You'd like to get the signup date of your last member. How can you retrieve this information?
+```sql
+select max(joindate) as latest
+	from cd.members;      
+```
+
+12. #### More aggregation
+You'd like to get the first and last name of the last member(s) who signed up - not just the date. How can you do that?
+```sql
+select firstname, surname, joindate
+	from cd.members
+	where joindate = 
+		(select max(joindate) 
+			from cd.members);   
+```
+
+
 ## Joins and subqueries
 ```sql
 ```
