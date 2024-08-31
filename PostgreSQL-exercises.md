@@ -105,23 +105,27 @@ CREATE TABLE cd.bookings
 [go to the top](#postgresql)
 
 ## Simple SQL Queries
-### Question
-1. How can you retrieve all the information from the cd.facilities table?
+### Questions
+1. #### Retrieve everything from a table
+How can you retrieve all the information from the cd.facilities table?
 ```sql
 select * from cd.facilities;     
 ```
 
-2. You want to print out a list of all of the facilities and their cost to members. How would you retrieve a list of only facility names and costs?
+2. #### Retrieve specific columns from a table
+You want to print out a list of all of the facilities and their cost to members. How would you retrieve a list of only facility names and costs?
 ```sql
 select name, membercost from cd.facilities;
 ```
 
-3. How can you produce a list of facilities that charge a fee to members?
+3. #### Control which rows are retrieved
+How can you produce a list of facilities that charge a fee to members?
 ```sql
 select * from cd.facilities where membercost > 0;
 ```
 
-4. How can you produce a list of facilities that charge a fee to members, and that fee is less than 1/50th of the monthly maintenance cost? Return the facid, facility name, member cost, and monthly maintenance of the facilities in question.
+4. #### Control which rows are retrieved - part 2
+How can you produce a list of facilities that charge a fee to members, and that fee is less than 1/50th of the monthly maintenance cost? Return the facid, facility name, member cost, and monthly maintenance of the facilities in question.
 ```sql
 select facid, name, membercost, monthlymaintenance 
 	from cd.facilities 
@@ -130,7 +134,8 @@ where
 	(membercost < monthlymaintenance/50.0);     
 ```
    
-5. How can you produce a list of all facilities with the word 'Tennis' in their name?
+5. #### Basic string searches
+How can you produce a list of all facilities with the word 'Tennis' in their name?
 ```sql
 select *
 	from cd.facilities 
@@ -138,7 +143,8 @@ select *
 		name like '%Tennis%';
 ```
 
-6. How can you retrieve the details of facilities with ID 1 and 5? Try to do it without using the OR operator.
+6. #### Matching against multiple possible values
+How can you retrieve the details of facilities with ID 1 and 5? Try to do it without using the OR operator.
 ```sql
 select *
 	from cd.facilities 
