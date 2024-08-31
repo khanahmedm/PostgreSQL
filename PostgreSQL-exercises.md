@@ -146,7 +146,8 @@ select *
 		facid in (1,5);
 ```
 
-7. How can you produce a list of facilities, with each labelled as 'cheap' or 'expensive' depending on if their monthly maintenance cost is more than $100? Return the name and monthly maintenance of the facilities in question.
+7. #### Classify results into buckets
+How can you produce a list of facilities, with each labelled as 'cheap' or 'expensive' depending on if their monthly maintenance cost is more than $100? Return the name and monthly maintenance of the facilities in question.
 ```sql
 select name, 
 	case when (monthlymaintenance > 100) then
@@ -157,7 +158,24 @@ select name,
 	from cd.facilities;  
 ```
 
-8. 
+8. #### Working with dates
+How can you produce a list of members who joined after the start of September 2012? Return the memid, surname, firstname, and joindate of the members in question.
+```sql
+select memid, surname, firstname, joindate 
+	from cd.members
+	where joindate >= '2012-09-01';   
+```
+
+9. #### Removing duplicates, and ordering results
+How can you produce an ordered list of the first 10 surnames in the members table? The list must not contain duplicates.
+```sql
+select distinct surname 
+	from cd.members
+order by surname
+limit 10;  
+```
+
+10. 
 ## Joins and subqueries
 ```sql
 ```
