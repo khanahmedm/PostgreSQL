@@ -222,7 +222,19 @@ select bks.starttime
 		and mems.surname='Farrell';    
 ```
 
-15. 
+Alternate syntax for join:
+```sql
+select bks.starttime
+        from
+                cd.bookings bks,
+                cd.members mems
+        where
+                mems.firstname='David'
+                and mems.surname='Farrell'
+                and mems.memid = bks.memid;
+```
+
+14. 
 ```sql
 ```
 ## Modifying data
