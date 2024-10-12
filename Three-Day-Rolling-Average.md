@@ -1,7 +1,9 @@
 #### January 31st's rolling 3 day average of total transaction amount processed per day
 ```sql
 SELECT 
-	* 
+    TO_CHAR(transaction_date, 'YYYY-MM-DD') AS transaction_date,
+    total_amount,
+    rolling_3_day_avg
 FROM
 (WITH daily_totals AS (
     SELECT 
