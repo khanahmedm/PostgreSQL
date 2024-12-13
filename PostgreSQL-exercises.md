@@ -926,8 +926,27 @@ order by date;
 ```
     
 ## Dates
+52. #### Produce a timestamp for 1 a.m. on the 31st of August 2012.
 ```sql
+select timestamp '2012-08-31 01:00:00';
+
+select '2012-08-31 01:00:00'::timestamp;
+select cast('2012-08-31 01:00:00' as timestamp);
 ```
+
+53. #### Subtract timestamps from each other
+Find the result of subtracting the timestamp '2012-07-30 01:00:00' from the timestamp '2012-08-31 01:00:00'
+```sql
+select timestamp '2012-08-31 01:00:00' - timestamp '2012-07-30 01:00:00' as interval;  
+```
+
+54. #### Generate a list of all the dates in October 2012
+Produce a list of all the dates in October 2012. They can be output as a timestamp (with time set to midnight) or a date.
+```sql
+select generate_series(timestamp '2012-10-01', timestamp '2012-10-31', interval '1 day') as ts; 
+```
+
+
 ## String
 ```sql
 ```
