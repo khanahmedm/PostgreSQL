@@ -946,6 +946,13 @@ Produce a list of all the dates in October 2012. They can be output as a timesta
 select generate_series(timestamp '2012-10-01', timestamp '2012-10-31', interval '1 day') as ts; 
 ```
 
+55. #### Get the day of the month from a timestamp
+Get the day of the month from the timestamp '2012-08-31' as an integer.
+```sql
+select extract(day from timestamp '2012-08-31');  
+```
+
+56. 
 
 ## String
 ```sql
