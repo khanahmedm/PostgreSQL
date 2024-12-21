@@ -967,6 +967,19 @@ select 	extract(day from ts.int)*60*60*24 +
 		(select timestamp '2012-09-02 00:00:00' - '2012-08-31 01:00:00' as int) ts
 ```
 
+57. #### Work out the number of days in each month of 2012
+For each month of the year in 2012, output the number of days in that month. Format the output as an integer column containing the month of the year, and a second column containing an interval data type.
+```sql
+select 	extract(month from cal.month) as month,
+	(cal.month + interval '1 month') - cal.month as length
+	from
+	(
+		select generate_series(timestamp '2012-01-01', timestamp '2012-12-01', interval '1 month') as month
+	) cal
+order by month;   
+```
+
+58. 
 
 ## String
 ```sql
