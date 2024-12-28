@@ -987,6 +987,15 @@ select (date_trunc('month',ts.testts) + interval '1 month')
 	from (select timestamp '2012-02-11 01:00:00' as testts) ts  
 ```
 
+59. #### Work out the end time of bookings
+Return a list of the start and end time of the last 10 bookings (ordered by the time at which they end, followed by the time at which they start) in the system.
+```sql
+select starttime, starttime + slots*(interval '30 minutes') endtime
+	from cd.bookings
+	order by endtime desc, starttime desc
+	limit 10    
+```
+
 ## String
 ```sql
 ```
