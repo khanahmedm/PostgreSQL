@@ -996,6 +996,15 @@ select starttime, starttime + slots*(interval '30 minutes') endtime
 	limit 10    
 ```
 
+60. #### Return a count of bookings for each month
+Return a count of bookings for each month, sorted by month
+```sql
+select date_trunc('month', starttime) as month, count(*)
+	from cd.bookings
+	group by month
+	order by month          
+```
+
 ## String
 ```sql
 ```
