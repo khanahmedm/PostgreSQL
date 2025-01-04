@@ -1023,10 +1023,15 @@ select name, month,
 order by name, month   
 ```
 
-62. 
+
 ## String
+
+62. #### Format the names of members
+Output the names of all members, formatted as 'Surname, Firstname'
 ```sql
+select surname || ', ' || firstname as name from cd.members
 ```
+
 ## Recursive
 ```sql
 ```
