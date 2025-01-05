@@ -1032,6 +1032,19 @@ Output the names of all members, formatted as 'Surname, Firstname'
 select surname || ', ' || firstname as name from cd.members
 ```
 
+63. #### Find facilities by a name prefix
+Find all facilities whose name begins with 'Tennis'. Retrieve all columns.
+```sql
+select * from cd.facilities where name like 'Tennis%';
+```
+
+64. #### Perform a case-insensitive search
+Perform a case-insensitive search to find all facilities whose name begins with 'tennis'. Retrieve all columns.
+```sql
+select * from cd.facilities where upper(name) like 'TENNIS%';
+```
+
+65. 
 ## Recursive
 ```sql
 ```
