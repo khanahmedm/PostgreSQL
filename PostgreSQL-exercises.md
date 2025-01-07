@@ -1044,7 +1044,16 @@ Perform a case-insensitive search to find all facilities whose name begins with 
 select * from cd.facilities where upper(name) like 'TENNIS%';
 ```
 
-65. 
+65. #### Find telephone numbers with parentheses
+You've noticed that the club's member table has telephone numbers with very inconsistent formatting. You'd like to find all the telephone numbers that contain parentheses, returning the member ID and telephone number sorted by member ID.
+```sql
+select memid, telephone from cd.members where telephone ~ '[()]';
+```
+
+```sql
+select memid, telephone from cd.members where telephone similar to '%[()]%';
+```
+
 ## Recursive
 ```sql
 ```
