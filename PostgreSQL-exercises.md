@@ -1050,6 +1050,23 @@ You've noticed that the club's member table has telephone numbers with very inco
 select memid, telephone from cd.members where telephone ~ '[()]';
 ```
 
+66. #### Pad zip codes with leading zeroes
+```sql
+select lpad(cast(zipcode as char(5)),5,'0') zip from cd.members order by zip   
+```
+
+67. #### Count the number of members whose surname starts with each letter of the alphabet
+You'd like to produce a count of how many members you have whose surname starts with each letter of the alphabet. Sort by the letter, and don't worry about printing out a letter if the count is 0.
+```sql
+select substr (mems.surname,1,1) as letter, count(*) as count 
+    from cd.members mems
+    group by letter
+    order by letter      
+```
+
+
+68. 
+
 ```sql
 select memid, telephone from cd.members where telephone similar to '%[()]%';
 ```
