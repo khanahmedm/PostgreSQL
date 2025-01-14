@@ -1050,6 +1050,10 @@ You've noticed that the club's member table has telephone numbers with very inco
 select memid, telephone from cd.members where telephone ~ '[()]';
 ```
 
+```sql
+select memid, telephone from cd.members where telephone similar to '%[()]%';
+```
+
 66. #### Pad zip codes with leading zeroes
 ```sql
 select lpad(cast(zipcode as char(5)),5,'0') zip from cd.members order by zip   
@@ -1065,10 +1069,18 @@ select substr (mems.surname,1,1) as letter, count(*) as count
 ```
 
 
-68. 
+68. #### Clean up telephone numbers
+The telephone numbers in the database are very inconsistently formatted. You'd like to print a list of member ids and numbers that have had '-','(',')', and ' ' characters removed. Order by member id.
+```sql
+select memid, translate(telephone, '-() ', '') as telephone
+    from cd.members
+    order by memid;
+```
 
 ```sql
-select memid, telephone from cd.members where telephone similar to '%[()]%';
+select memid, regexp_replace(telephone, '[^0-9]', '', 'g') as telephone
+    from cd.members
+    order by memid;
 ```
 
 ## Recursive
