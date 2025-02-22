@@ -100,7 +100,9 @@ CREATE TABLE cd.bookings
 ## Populate Tables
 1. Copy insert statements for Members table from [here](insert-into-members.sql)
 2. Copy insert statements for facilities table from [here](insert-into-facilities.sql)
-3. Copy insert statements for Bookings table from [here](insert-into-bookings.sql) 
+3. Copy insert statements for Bookings table from [here](insert-into-bookings.sql)
+4. Copy create index statements from [here](create-indexes.sql)
+5. Copy add constraints statements from [here](add-constraints.sql)
 
 [go to the top](#postgresql)
 
